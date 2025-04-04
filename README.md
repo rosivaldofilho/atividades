@@ -42,3 +42,31 @@ composer install
 
 npm install
 npm run build
+
+
+### 3. Configure o Arquivo `.env`
+
+Copie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente:
+
+```bash
+cp .env.example .env
+
+
+Edite o arquivo .env para configurar o banco de dados SQLite:
+```bash
+DB_CONNECTION=sqlite
+DB_DATABASE=database/database.sqlite
+
+Crie o arquivo de banco de dados SQLite:
+```bash
+touch database/database.sqlite
+
+Gere a chave de aplicação:
+```bash
+php artisan key:generate
+
+
+
+
+
+
