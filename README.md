@@ -28,8 +28,17 @@ Antes de começar, certifique-se de que você possui os seguintes requisitos ins
 
 - **PHP**: Versão **8.3.7** ou superior.
 - **Composer**: Gerenciador de dependências do PHP.
-- **MySQL**: Banco de dados relacional (ou outro suportado pelo Laravel).
-- **Node.js e npm** (opcional): Para compilar assets front-end, se necessário.
+- **SQLite**: Banco de dados leve e embutido.
 - **Git**: Para controle de versão e clonagem do repositório.
 
 ---
+
+### 2. Instale as Dependências
+
+Instale as dependências do Composer:
+
+```bash
+composer install
+
+npm install
+npm run build
