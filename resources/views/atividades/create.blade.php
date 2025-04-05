@@ -15,34 +15,21 @@
         <!-- Token CSRF para proteção contra ataques CSRF -->
         @csrf
 
-        <!-- Campo para a data da atividade -->
-        <div class="mb-3">
-            <label for="data_atividade" class="form-label">Data da Atividade</label>
-            <input type="date" name="data_atividade" id="data_atividade" class="form-control" value="{{ old('data_atividade') }}" required>
-            <!-- Mensagem de erro caso a validação falhe -->
-            @error('data_atividade')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <!-- Campo para a hora de início -->
-        <div class="mb-3">
-            <label for="hora_inicio" class="form-label">Hora de Início</label>
-            <input type="time" name="hora_inicio" id="hora_inicio" class="form-control" value="{{ old('hora_inicio') }}" required>
-            <!-- Mensagem de erro caso a validação falhe -->
-            @error('hora_inicio')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <!-- Campo para a hora de término -->
-        <div class="mb-3">
-            <label for="hora_fim" class="form-label">Hora de Término</label>
-            <input type="time" name="hora_fim" id="hora_fim" class="form-control" value="{{ old('hora_fim') }}" required>
-            <!-- Mensagem de erro caso a validação falhe -->
-            @error('hora_fim')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+        <!-- Linha com Data, Hora de Início e Hora de Término -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="data_atividade" class="form-label">Data da Atividade</label>
+                <input type="date" name="data_atividade" id="data_atividade" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="hora_inicio" class="form-label">Hora de Início</label>
+                <input type="time" name="hora_inicio" id="hora_inicio" class="form-control" required>
+            </div>
+            <div class="col-md-4">
+                <label for="hora_termino" class="form-label">Hora de Término</label>
+                <input type="time" name="hora_termino" id="hora_termino" class="form-control" required>
+            </div>
+            
         </div>
 
         <!-- Campo para a descrição da atividade -->
