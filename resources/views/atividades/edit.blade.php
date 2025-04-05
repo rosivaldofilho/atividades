@@ -3,9 +3,12 @@
 <!-- Extensão do layout principal (se você estiver usando um layout base) -->
 @extends('layouts.app')
 
-@section('content')
+@section('title')
     <!-- Título da página -->
-    <h1>Editar Atividade</h1>
+    <h2 style="margin-bottom: 0;">Editar Atividade</h2>
+@endsection
+
+@section('content')
 
     <!-- Formulário para editar a atividade -->
     <form action="{{ route('atividades.update', $atividade->id) }}" method="POST">

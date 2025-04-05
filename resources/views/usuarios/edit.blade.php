@@ -3,9 +3,11 @@
 <!-- Extensão do layout principal (se você estiver usando um layout base) -->
 @extends('layouts.app')
 
+@section('title')
+    <h2 style="margin-bottom: 0;">Editar Usuário</h2>
+@endsection
+
 @section('content')
-    <!-- Título da página -->
-    <h1>Editar Usuário</h1>
 
     <!-- Formulário para editar o usuário -->
     <form action="{{ route('usuarios.update', $usuario->id) }}" method="POST">

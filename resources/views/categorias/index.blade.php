@@ -3,9 +3,11 @@
 <!-- Extensão do layout principal (se você estiver usando um layout base) -->
 @extends('layouts.app')
 
+@section('title')
+    <h2 style="margin-bottom: 0;">Categorias</h2>
+@endsection
+
 @section('content')
-    <!-- Título da página -->
-    <h1>Categorias</h1>
 
     <!-- Botão para criar uma nova categoria -->
     <a href="{{ route('categorias.create') }}" class="btn btn-primary mb-3">

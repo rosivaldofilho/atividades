@@ -3,9 +3,11 @@
 <!-- Extensão do layout principal (se você estiver usando um layout base) -->
 @extends('layouts.app')
 
+@section('title')
+    <h2 style="margin-bottom: 0;">Detalhes do Usuário</h2>
+@endsection
+
 @section('content')
-    <!-- Título da página -->
-    <h1>Detalhes do Usuário</h1>
 
     <!-- Exibição dos dados do usuário -->
     <div class="card">

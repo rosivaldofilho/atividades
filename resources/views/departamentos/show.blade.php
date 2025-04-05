@@ -3,11 +3,13 @@
 <!-- Extende o layout principal (caso você tenha um layout base) -->
 @extends('layouts.app')
 
+@section('title')
+    <h2 style="margin-bottom: 0;">Detalhes do Departamento</h2>
+@endsection
+
 @section('content')
     <!-- Container principal -->
     <div class="container">
-        <!-- Título da página -->
-        <h1 class="mt-4">Detalhes do Departamento</h1>
 
         <!-- Exibição dos dados do departamento -->
         <div class="card">

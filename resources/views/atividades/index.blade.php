@@ -3,9 +3,12 @@
 <!-- Extensão do layout principal (se você estiver usando um layout base) -->
 @extends('layouts.app')
 
-@section('content')
+@section('title')
     <!-- Título da página -->
-    <h1>Atividades</h1>
+    <h2 style="margin-bottom: 0;">Atividades</h2>
+@endsection
+
+@section('content')
 
     <!-- Botão para criar uma nova atividade -->
     <a href="{{ route('atividades.create') }}" class="btn btn-primary mb-3">

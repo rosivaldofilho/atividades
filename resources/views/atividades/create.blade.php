@@ -3,10 +3,13 @@
 <!-- Extensão do layout principal (se você estiver usando um layout base) -->
 @extends('layouts.app')
 
-@section('content')
+@section('title')
     <!-- Título da página -->
-    <h1>Criar Nova Atividade</h1>
+    <h2 style="margin-bottom: 0;">Criar Nova Atividade</h2>
+@endsection
 
+@section('content')
+    
     <!-- Formulário para criar uma nova atividade -->
     <form action="{{ route('atividades.store') }}" method="POST">
         <!-- Token CSRF para proteção contra ataques CSRF -->

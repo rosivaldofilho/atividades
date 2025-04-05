@@ -3,11 +3,13 @@
 <!-- Extende o layout principal (caso você tenha um layout base) -->
 @extends('layouts.app')
 
+@section('title')
+    <h2 style="margin-bottom: 0;">Departamentos</h2>
+@endsection
+
 @section('content')
     <!-- Container principal -->
     <div class="container">
-        <!-- Título da página -->
-        <h1 class="mt-4">Departamentos</h1>
 
         <!-- Botão para criar um novo departamento -->
         <a href="{{ route('departamentos.create') }}" class="btn btn-primary mb-3">

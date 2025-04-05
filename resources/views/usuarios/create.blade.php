@@ -3,9 +3,11 @@
 <!-- Extensão do layout principal (se você estiver usando um layout base) -->
 @extends('layouts.app')
 
+@section('title')
+    <h2 style="margin-bottom: 0;">Criar Novo Usuário</h2>
+@endsection
+
 @section('content')
-    <!-- Título da página -->
-    <h1>Criar Novo Usuário</h1>
 
     <!-- Formulário para criar um novo usuário -->
     <form action="{{ route('usuarios.store') }}" method="POST">
