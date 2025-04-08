@@ -41,6 +41,10 @@
 
                             <!-- Coluna de ações (editar e excluir) -->
                             <td>
+                                <!-- Botão para ir para a página de detalhes -->
+                                <a href="{{ route('departamentos.show', $departamento->id) }}" class="btn btn-sm btn-primary">
+                                    Ver Detalhes
+                                </a>
                                 <!-- Botão para editar o departamento -->
                                 <a href="{{ route('departamentos.edit', $departamento->id) }}" class="btn btn-sm btn-warning">
                                     Editar

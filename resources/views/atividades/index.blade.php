@@ -57,13 +57,13 @@
                         <td>{{ $atividade->descricao }}</td>
 
                         <!-- Exibe a categoria associada -->
-                        <td>{{ $atividade->categoria->descricao ?? 'Sem Categoria' }}</td>
+                        <td>{{ $atividade->categoria->nome ?? 'Sem Categoria' }}</td>
 
                         <!-- Exibe o nome do usuário responsável -->
                         <td style="width: 15em">{{ $atividade->usuario->nome ?? 'Sem Usuário' }}</td>
 
                         <!-- Exibe o departamento associado -->
-                        <td>{{ $atividade->departamento->descricao ?? 'Sem Departamento' }}</td>
+                        <td>{{ $atividade->departamento->nome ?? 'Sem Departamento' }}</td>
 
                         <!-- Exibe o status da atividade -->
                         <td>{{ $atividade->status }}</td>

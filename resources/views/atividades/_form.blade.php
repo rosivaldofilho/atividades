@@ -73,7 +73,7 @@
             @foreach ($departamentos as $departamento)
                 <option value="{{ $departamento->id }}" 
                     {{ old('departamento_id', $atividade->departamento_id ?? null) == $departamento->id ? 'selected' : '' }}>
-                    {{ $departamento->descricao }}
+                    {{ $departamento->nome }}
                 </option>
             @endforeach
         </select>
@@ -91,7 +91,7 @@
             @foreach ($categorias as $categoria)
                 <option value="{{ $categoria->id }}" 
                     {{ old('categoria_id', $atividade->categoria_id ?? null) == $categoria->id ? 'selected' : '' }}>
-                    {{ $categoria->descricao }}
+                    {{ $categoria->nome }}
                 </option>
             @endforeach
         </select>

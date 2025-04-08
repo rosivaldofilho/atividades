@@ -28,13 +28,13 @@
             <p><strong>Descrição:</strong> {{ $atividade->descricao }}</p>
 
             <!-- Categoria associada -->
-            <p><strong>Categoria:</strong> {{ $atividade->categoria->descricao ?? 'Sem Categoria' }}</p>
+            <p><strong>Categoria:</strong> {{ $atividade->categoria->nome ?? 'Sem Categoria' }}</p>
 
             <!-- Usuário responsável -->
             <p><strong>Usuário:</strong> {{ $atividade->usuario->nome ?? 'Sem Usuário' }}</p>
 
             <!-- Departamento associado -->
-            <p><strong>Departamento:</strong> {{ $atividade->departamento->descricao ?? 'Sem Departamento' }}</p>
+            <p><strong>Departamento:</strong> {{ $atividade->departamento->nome ?? 'Sem Departamento' }}</p>
 
             <!-- Status da atividade -->
             <p><strong>Status:</strong> {{ $atividade->status }}</p>
