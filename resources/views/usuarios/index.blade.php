@@ -45,6 +45,12 @@
 
                         <!-- Coluna de ações (editar e excluir) -->
                         <td>
+
+                            <!-- Botão para ir para a página de detalhes -->
+                            <a href="{{ route('usuarios.show', $usuario->id) }}" class="btn btn-sm btn-primary">
+                                Ver Detalhes
+                            </a>
+
                             <!-- Link para editar o usuário -->
                             <a href="{{ route('usuarios.edit', $usuario->id) }}" class="btn btn-sm btn-warning">
                                 Editar
