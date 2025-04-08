@@ -41,6 +41,11 @@
 
                         <!-- Coluna de ações (editar e excluir) -->
                         <td>
+                            <!-- Botão para ir para a página de detalhes -->
+                            <a href="{{ route('categorias.show', $categoria->id) }}" class="btn btn-sm btn-primary">
+                                Ver Detalhes
+                            </a>
+                            
                             <!-- Link para editar a categoria -->
                             <a href="{{ route('categorias.edit', $categoria->id) }}" class="btn btn-sm btn-warning">
                                 Editar

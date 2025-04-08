@@ -20,7 +20,7 @@
         <p>Nenhum usuário cadastrado.</p>
     @else
         <!-- Tabela para exibir os usuários -->
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped table-hover">
             <thead>
                 <tr>
                     <!-- Cabeçalhos da tabela -->

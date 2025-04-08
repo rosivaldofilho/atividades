@@ -21,12 +21,12 @@
             <p>Nenhum departamento cadastrado.</p>
         @else
             <!-- Tabela para exibir os departamentos -->
-            <table class="table table-bordered table-striped">
+            <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nome</th>
-                        <th>Ações</th>
+                        <th style="width: 22em">Ações</th>
                     </tr>
                 </thead>
                 <tbody>

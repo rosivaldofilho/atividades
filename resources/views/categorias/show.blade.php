@@ -47,4 +47,40 @@
             Voltar
         </a>
     </div>
+
+
+    <!-- Lista de Atividades -->
+    <div class="mt-4">
+        <h4>Atividades Relacionadas</h4>
+        @if ($categoria->atividades->isNotEmpty())
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Data da Atividade</th>
+                        <th>Hora de Início</th>
+                        <th>Hora de Fim</th>
+                        <th>Descrição</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($categoria->atividades as $atividade)
+                        <tr>
+                            <td>{{ $atividade->id }}</td>
+                            <td>{{ $atividade->data_atividade->format('d/m/Y') }}</td>
+                            <td>{{ $atividade->hora_inicio }}</td>
+                            <td>{{ $atividade->hora_fim }}</td>
+                            <td>{{ $atividade->descricao }}</td>
+                            <td>{{ ucfirst($atividade->status) }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @else
+            <p>Nenhuma atividade relacionada a esta categoria.</p>
+        @endif
+    </div>
+
+
 @endsection

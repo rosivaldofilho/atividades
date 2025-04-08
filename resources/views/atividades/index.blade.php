@@ -21,7 +21,7 @@
         <p>Nenhuma atividade cadastrada.</p>
     @else
         <!-- Tabela para exibir as atividades -->
-        <table class="table table-bordered">
+        <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <!-- Cabeçalhos da tabela -->
