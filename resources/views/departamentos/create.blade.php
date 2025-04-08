@@ -16,12 +16,12 @@
             <!-- Token CSRF para proteção contra ataques CSRF -->
             @csrf
 
-            <!-- Campo de descrição do departamento -->
+            <!-- Campo do nome do departamento -->
             <div class="mb-3">
-                <label for="descricao" class="form-label">Descrição</label>
-                <input type="text" name="descricao" id="descricao" class="form-control" placeholder="Ex: Recursos Humanos" required>
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" name="nome" id="nome" class="form-control" placeholder="Ex: Recursos Humanos" required>
                 <!-- Mensagem de erro caso a validação falhe -->
-                @error('descricao')
+                @error('nome')
                     <div class="text-danger">{{ $message }}</div>
                 @enderror
             </div>

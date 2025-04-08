@@ -15,7 +15,7 @@ class Departamento extends Model
      * @var array
      */
     protected $fillable = [
-        'descricao', // Define que o campo 'descricao' pode ser preenchido em massa (usado em create/update)
+        'nome', // Define que o campo 'nome' pode ser preenchido em massa (usado em create/update)
     ];
 
     /**

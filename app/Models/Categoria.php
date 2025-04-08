@@ -15,7 +15,7 @@ class Categoria extends Model
      * @var array
      */
     protected $fillable = [
-        'descricao', // Permite que o campo 'descricao' seja preenchido via métodos como create() e update().
+        'nome', // Permite que o campo 'nome' seja preenchido via métodos como create() e update().
     ];
 
     /**
@@ -34,11 +34,11 @@ class Categoria extends Model
      * Escopo de consulta para buscar categorias por descrição.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  string  $descricao
+     * @param  string  $nome
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopePorDescricao($query, $descricao)
+    public function scopePorNome($query, $nome)
     {
-        return $query->where('descricao', 'like', "%{$descricao}%");
+        return $query->where('nome', 'like', "%{$nome}%");
     }
 }

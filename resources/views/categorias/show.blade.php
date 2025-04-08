@@ -15,8 +15,8 @@
             <!-- ID da categoria -->
             <p><strong>ID:</strong> {{ $categoria->id }}</p>
 
-            <!-- Descrição da categoria -->
-            <p><strong>Descrição:</strong> {{ $categoria->descricao }}</p>
+            <!-- Nome da categoria -->
+            <p><strong>Nome:</strong> {{ $categoria->nome }}</p>
 
             <!-- Data de criação -->
             <p><strong>Criado em:</strong> {{ $categoria->created_at->format('d/m/Y H:i') }}</p>

@@ -41,7 +41,7 @@
                         <td>{{ $usuario->nome }}</td>
 
                         <!-- Exibe o nome do departamento associado ao usuário -->
-                        <td>{{ $usuario->departamento->descricao ?? 'Sem Departamento' }}</td>
+                        <td>{{ $usuario->departamento->nome ?? 'Sem Departamento' }}</td>
 
                         <!-- Coluna de ações (editar e excluir) -->
                         <td>

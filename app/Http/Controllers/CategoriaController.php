@@ -42,7 +42,7 @@ class CategoriaController extends Controller
     {
         // Valida os dados recebidos do formulário
         $request->validate([
-            'descricao' => 'required|string|max:255|unique:categorias',
+            'nome' => 'required|string|max:255|unique:categorias',
         ]);
 
         // Cria uma nova categoria no banco de dados
@@ -87,7 +87,7 @@ class CategoriaController extends Controller
     {
         // Valida os dados recebidos do formulário
         $request->validate([
-            'descricao' => 'required|string|max:255|unique:categorias,descricao,' . $categoria->id,
+            'nome' => 'required|string|max:255|unique:categorias,nome,' . $categoria->id,
         ]);
 
         // Atualiza os dados da categoria no banco de dados

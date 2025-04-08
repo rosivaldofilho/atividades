@@ -16,12 +16,12 @@
         <!-- Método HTTP PUT para atualização -->
         @method('PUT')
 
-        <!-- Campo para a descrição da categoria -->
+        <!-- Campo para o nome da categoria -->
         <div class="mb-3">
-            <label for="descricao" class="form-label">Descrição</label>
-            <input type="text" name="descricao" id="descricao" class="form-control" value="{{ old('descricao', $categoria->descricao) }}" required>
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control" value="{{ old('nome', $categoria->nome) }}" required>
             <!-- Mensagem de erro caso a validação falhe -->
-            @error('descricao')
+            @error('nome')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>

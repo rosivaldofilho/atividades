@@ -25,7 +25,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Descrição</th>
+                        <th>Nome</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -36,8 +36,8 @@
                             <!-- Exibe o ID do departamento -->
                             <td>{{ $departamento->id }}</td>
 
-                            <!-- Exibe a descrição do departamento -->
-                            <td>{{ $departamento->descricao }}</td>
+                            <!-- Exibe a nome do departamento -->
+                            <td>{{ $departamento->nome }}</td>
 
                             <!-- Coluna de ações (editar e excluir) -->
                             <td>

@@ -25,7 +25,7 @@
                 <tr>
                     <!-- Cabeçalhos da tabela -->
                     <th>ID</th>
-                    <th>Descrição</th>
+                    <th>Nome</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -36,8 +36,8 @@
                         <!-- Exibe o ID da categoria -->
                         <td>{{ $categoria->id }}</td>
 
-                        <!-- Exibe a descrição da categoria -->
-                        <td>{{ $categoria->descricao }}</td>
+                        <!-- Exibe o nome da categoria -->
+                        <td>{{ $categoria->nome }}</td>
 
                         <!-- Coluna de ações (editar e excluir) -->
                         <td>

@@ -32,7 +32,7 @@
                 <!-- Loop para iterar sobre os departamentos disponíveis -->
                 @foreach ($departamentos as $departamento)
                     <option value="{{ $departamento->id }}" {{ old('departamento_id') == $departamento->id ? 'selected' : '' }}>
-                        {{ $departamento->descricao }}
+                        {{ $departamento->nome }}
                     </option>
                 @endforeach
             </select>

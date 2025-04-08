@@ -31,13 +31,14 @@ class AtividadeController extends Controller
      */
     public function create()
     {
+        $atividade = new Atividade();
         // Recupera todos os departamentos, usuários e categorias para preencher os campos de seleção no formulário
         $departamentos = Departamento::all();
         $usuarios = Usuario::all();
         $categorias = Categoria::all();
 
         // Retorna a view 'create' com os dados necessários
-        return view('atividades.create', compact('departamentos', 'usuarios', 'categorias'));
+        return view('atividades.create', compact('atividade','departamentos', 'usuarios', 'categorias'));
     }
 
     /**

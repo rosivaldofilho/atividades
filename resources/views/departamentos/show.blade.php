@@ -17,8 +17,8 @@
                 <!-- ID do departamento -->
                 <p><strong>ID:</strong> {{ $departamento->id }}</p>
 
-                <!-- Descrição do departamento -->
-                <p><strong>Descrição:</strong> {{ $departamento->descricao }}</p>
+                <!-- Nome do departamento -->
+                <p><strong>Nome:</strong> {{ $departamento->nome }}</p>
 
                 <!-- Data de criação -->
                 <p><strong>Criado em:</strong> {{ $departamento->created_at->format('d/m/Y H:i') }}</p>

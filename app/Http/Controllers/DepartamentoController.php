@@ -42,7 +42,7 @@ class DepartamentoController extends Controller
     {
         // Valida os dados do formulário
         $validated = $request->validate([
-            'descricao' => 'required|string|max:255', // A descrição é obrigatória e deve ser uma string de até 255 caracteres
+            'nome' => 'required|string|max:255', // O nome é obrigatório e deve ser uma string de até 255 caracteres
         ]);
 
         // Cria um novo departamento no banco de dados com os dados validados
@@ -87,7 +87,7 @@ class DepartamentoController extends Controller
     {
         // Valida os dados do formulário
         $validated = $request->validate([
-            'descricao' => 'required|string|max:255', // A descrição é obrigatória e deve ser uma string de até 255 caracteres
+            'nome' => 'required|string|max:255', // O nome é obrigatório e deve ser uma string de até 255 caracteres
         ]);
 
         // Atualiza o departamento no banco de dados com os dados validados

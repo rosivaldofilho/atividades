@@ -19,7 +19,7 @@
             <p><strong>Nome:</strong> {{ $usuario->nome }}</p>
 
             <!-- Departamento associado ao usuário -->
-            <p><strong>Departamento:</strong> {{ $usuario->departamento->descricao ?? 'Sem Departamento' }}</p>
+            <p><strong>Departamento:</strong> {{ $usuario->departamento->nome ?? 'Sem Departamento' }}</p>
 
             <!-- Data de criação -->
             <p><strong>Criado em:</strong> {{ $usuario->created_at->format('d/m/Y H:i') }}</p>
