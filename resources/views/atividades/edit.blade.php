@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
+@section('breadcrumb')
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('atividades.index') }}">Atividades</a></li>
+    <li class="breadcrumb-item" aria-current="page">Editar atividade</li>
+@endsection
+
 @section('title')
-    <h2 style="margin-bottom: 0;">Editar Atividade</h2>
+    <span>Editar Atividade</span>
 @endsection
 
 @section('content')

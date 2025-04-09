@@ -3,8 +3,14 @@
 <!-- Extensão do layout principal (se você estiver usando um layout base) -->
 @extends('layouts.app')
 
+@section('breadcrumb')
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('atividades.index') }}">Atividades</a></li>
+    <li class="breadcrumb-item" aria-current="page">Detalhes da atividade</li>
+@endsection
+
 @section('title')
-    <h2 style="margin-bottom: 0;">Detalhes da Atividade</h2>
+    <span>Detalhes da Atividade</span>
 @endsection
 
 @section('content')

@@ -4,7 +4,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h2 style="margin-bottom: 0;">Editar Categoria</h2>
+    <span>Editar Categoria</span>
 @endsection
 
 @section('content')

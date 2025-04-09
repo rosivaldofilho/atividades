@@ -4,7 +4,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h2 style="margin-bottom: 0;">Editar Departamento</h2>
+    <span>Editar Departamento</span>
 @endsection
 
 @section('content')

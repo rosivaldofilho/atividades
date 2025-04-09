@@ -332,14 +332,14 @@
         <div class="page-block">
           <div class="row align-items-center">
             <div class="col-md-12">
-              <div class="page-header-title">
-                <h5 class="m-b-10">Sample Page</h5>
-              </div>
               <ul class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="javascript: void(0)">Other</a></li>
-                <li class="breadcrumb-item" aria-current="page">Sample Page</li>
+                @yield('breadcrumb')
               </ul>
+            </div>
+            <div class="col-md-12">
+              <div class="page-header-title">
+                <h2 class="mb-0">@yield('title')</h2>
+              </div>
             </div>
           </div>
         </div>
@@ -350,19 +350,12 @@
       <div class="row">
         <!-- [ sample-page ] start -->
         <div class="col-sm-12">
-          <div class="card">
-            <div class="card-header">
-                @yield('title')
-            </div>
-            <div class="card-body">
 
 
-                @yield('content')
+          @yield('content')
 
 
 
-            </div>
-          </div>
         </div>
         <!-- [ sample-page ] end -->
       </div>
@@ -398,24 +391,13 @@
 
 
 <script>layout_change('light');</script>
-
-
-
-
 <script>change_box_container('false');</script>
-
-
-
 <script>layout_rtl_change('false');</script>
-
-
 <script>preset_change("preset-1");</script>
-
-
 <script>font_change("Public-Sans");</script>
 
     
-
+@yield('page_script')
   
 </body>
 <!-- [Body] end -->

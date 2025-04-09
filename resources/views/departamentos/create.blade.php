@@ -4,7 +4,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h2 style="margin-bottom: 0;">Criar Novo Departamento</h2>
+    <span>Criar Novo Departamento</span>
 @endsection
 
 @section('content')

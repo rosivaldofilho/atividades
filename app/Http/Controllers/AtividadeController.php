@@ -18,7 +18,7 @@ class AtividadeController extends Controller
     public function index()
     {
         // Recupera todas as atividades do banco de dados
-        $atividades = Atividade::with(['categoria', 'usuario', 'departamento'])->get();
+        $atividades = Atividade::paginate(2);
 
         // Retorna a view 'index' com as atividades
         return view('atividades.index', compact('atividades'));

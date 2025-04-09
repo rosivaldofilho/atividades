@@ -16,7 +16,7 @@ class UsuarioController extends Controller
     public function index()
     {
         // Recupera todos os usuários do banco de dados
-        $usuarios = Usuario::with('departamento')->get(); // Carrega os departamentos relacionados
+        $usuarios = Usuario::with('departamento')->paginate(10);; // Carrega os departamentos relacionados
 
         // Retorna a view 'index' com os usuários
         return view('usuarios.index', compact('usuarios'));

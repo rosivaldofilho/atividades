@@ -4,7 +4,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <h2 style="margin-bottom: 0;">Detalhes do Usuário</h2>
+    <span>Detalhes do Usuário</span>
 @endsection
 
 @section('content')
@@ -54,7 +54,7 @@
 
     <!-- Lista de Atividades -->
     <div class="mt-4">
-        <h4>Atividades Relacionadas</h4>
+        <h4>Atividades Relacionadas</span>
         @if ($usuario->atividades->isNotEmpty())
             <table class="table table-bordered table-hover">
                 <thead>
