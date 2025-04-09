@@ -13,13 +13,16 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        // Recupera todos os usuários do banco de dados
-        $usuarios = Usuario::with('departamento')->paginate(10);; // Carrega os departamentos relacionados
+        // Define o termo de busca
+        $searchTerm = $request->input('search', '');
 
-        // Retorna a view 'index' com os usuários
-        return view('usuarios.index', compact('usuarios'));
+        // Carrega os usuários com filtro e paginação
+        $usuarios = Usuario::porNome($searchTerm)->with('departamento')->paginate(6);
+
+        // Passa o termo de busca para a view
+        return view('usuarios.index', compact('usuarios', 'searchTerm'));
     }
 
     /**

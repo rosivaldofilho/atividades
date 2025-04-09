@@ -52,6 +52,9 @@ class Usuario extends Model
      */
     public function scopePorNome($query, $nome)
     {
-        return $query->where('nome', 'like', "%{$nome}%");
+        if (!empty($nome)) {
+            return $query->where('nome', 'like', "%{$nome}%");
+        }
+        return $query;
     }
 }
