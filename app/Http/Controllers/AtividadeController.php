@@ -7,6 +7,7 @@ use App\Models\Categoria;
 use App\Models\Usuario;
 use App\Models\Departamento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AtividadeController extends Controller
 {
@@ -15,13 +16,34 @@ class AtividadeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        // Recupera todas as atividades do banco de dados
-        $atividades = Atividade::paginate(2);
+        // Define o termo de busca
+        $searchTerm = $request->input('search', '');
 
-        // Retorna a view 'index' com as atividades
-        return view('atividades.index', compact('atividades'));
+        // Normaliza o termo de busca para remover acentos
+        //$normalizedSearchTerm = Str::ascii($searchTerm);
+        
+        // Carrega as atividades com filtro global e paginação
+        $atividades = Atividade::whereRaw("REPLACE(LOWER(data_atividade), ' ', '') LIKE ?", ["%{$searchTerm}%"])
+                               ->orWhereRaw("REPLACE(LOWER(hora_inicio), ' ', '') LIKE ?", ["%{$searchTerm}%"])
+                               ->orWhereRaw("REPLACE(LOWER(hora_fim), ' ', '') LIKE ?", ["%{$searchTerm}%"])
+                               ->orWhereRaw("REPLACE(LOWER(descricao), ' ', '') LIKE ?", ["%{$searchTerm}%"])
+                               ->orWhereRaw("REPLACE(LOWER(status), ' ', '') LIKE ?", ["%{$searchTerm}%"])
+                               ->orWhereHas('categoria', function ($query) use ($searchTerm) {
+                                   $query->whereRaw("REPLACE(LOWER(nome), ' ', '') LIKE ?", ["%{$searchTerm}%"]);
+                               })
+                               ->orWhereHas('usuario', function ($query) use ($searchTerm) {
+                                   $query->whereRaw("REPLACE(LOWER(nome), ' ', '') LIKE ?", ["%{$searchTerm}%"]);
+                               })
+                               ->orWhereHas('departamento', function ($query) use ($searchTerm) {
+                                   $query->whereRaw("REPLACE(LOWER(nome), ' ', '') LIKE ?", ["%{$searchTerm}%"]);
+                               })
+                               ->with(['categoria', 'usuario', 'departamento'])
+                               ->paginate(6);
+
+        // Passa o termo de busca para a view
+        return view('atividades.index', compact('atividades', 'searchTerm'));
     }
 
     /**

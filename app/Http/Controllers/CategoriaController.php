@@ -12,10 +12,14 @@ class CategoriaController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        // Recupera todas as categorias do banco de dados
-        $categorias = Categoria::all();
+
+        // Define o termo de busca
+        $searchTerm = $request->input('search', '');
+
+        // Carrega os departamentos com filtro e paginação
+        $categorias = Categoria::porNome($searchTerm)->paginate(6);
 
         // Retorna a view 'index' com as categorias
         return view('categorias.index', compact('categorias'));

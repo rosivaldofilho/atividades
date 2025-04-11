@@ -53,7 +53,7 @@ class Usuario extends Model
     public function scopePorNome($query, $nome)
     {
         if (!empty($nome)) {
-            return $query->where('nome', 'like', "%{$nome}%");
+            return $query->whereRaw("REPLACE(LOWER(nome), ' ', '') LIKE ?", ["%{$nome}%"]);
         }
         return $query;
     }

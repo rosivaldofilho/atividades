@@ -18,19 +18,29 @@
 
 
 
-    <!-- Verifica se há atividades registradas -->
-    @if ($atividades->isEmpty())
-        <!-- Mensagem caso não haja atividades -->
-        <p>Nenhuma atividade cadastrada.</p>
-    @else
-        <div class="card table-card">
-            <div class="card-header d-flex align-items-center justify-content-between">
-                <!-- Botão para criar uma nova atividade -->
-                <a href="{{ route('atividades.create') }}" class="btn btn-primary mb-3">
-                    Criar Nova Atividade
-                </a>
-            </div>
-            <div class="card-body">
+    <div class="card table-card">
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <!-- Botão para criar uma nova atividade -->
+            <a href="{{ route('atividades.create') }}" class="btn btn-primary mb-3">
+                Criar Nova Atividade
+            </a>
+            <!-- Formulário de Pesquisa -->
+            <form action="{{ route('atividades.index') }}" method="GET" class="mb-3">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Buscar atividade..."
+                        value="{{ request('search') }}">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+        </div>
+        <div class="card-body">
+            <!-- Verifica se há atividades registradas -->
+            @if ($atividades->isEmpty())
+                <div class="row m-3">
+                    <!-- Mensagem caso não haja atividades -->
+                    <p>Nenhuma atividade encontrada.</p>
+                </div>
+            @else
                 <div class="table-responsive">
                     <!-- Tabela para exibir as atividades -->
                     <table class="table table-hover datatable-table table-striped">
@@ -110,14 +120,15 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-                <div class="text-end m-r-20">
-
-                    <!-- Link para paginação -->
-                    {{ $atividades->links() }}
-
-                </div>
-            </div>
+            @endif
         </div>
-    @endif
+        <div class="text-end m-3">
+
+            <!-- Link para paginação -->
+            {{ $atividades->links() }}
+
+        </div>
+    </div>
+    </div>
+
 @endsection

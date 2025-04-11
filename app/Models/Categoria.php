@@ -39,6 +39,6 @@ class Categoria extends Model
      */
     public function scopePorNome($query, $nome)
     {
-        return $query->where('nome', 'like', "%{$nome}%");
+        return $query->whereRaw("REPLACE(LOWER(nome), ' ', '') LIKE ?", ["%{$nome}%"]);
     }
 }

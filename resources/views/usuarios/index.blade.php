@@ -23,32 +23,37 @@
 
 
 
-    <!-- Verifica se há usuários registrados -->
-    @if ($usuarios->isEmpty())
-        <!-- Mensagem caso não haja usuários -->
-        <p>Nenhum usuário cadastrado.</p>
-    @else
-        <div class="dataTables_wrapper dt-bootstrap5">
-            <div class="card table-card">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                    <!-- Botão para criar um novo usuário -->
-                    <a href="{{ route('usuarios.create') }}" class="btn btn-primary m-3">
-                        Criar Novo Usuário
-                    </a>
-                    <!-- Formulário de Pesquisa -->
-                    <form action="{{ route('usuarios.index') }}" method="GET" class="mb-3">
-                        <div class="input-group">
-                            <input type="text" name="search" class="form-control" placeholder="Buscar usuário..."
-                                value="{{ request('search') }}">
-                            <button type="submit" class="btn btn-primary">Buscar</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="card-body">
+
+    <div class="dataTables_wrapper dt-bootstrap5">
+        <div class="card table-card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <!-- Botão para criar um novo usuário -->
+                <a href="{{ route('usuarios.create') }}" class="btn btn-primary m-3">
+                    Criar Novo Usuário
+                </a>
+                <!-- Formulário de Pesquisa -->
+                <form action="{{ route('usuarios.index') }}" method="GET" class="mb-3">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Buscar usuário..."
+                            value="{{ request('search') }}">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-body">
+
+                <!-- Verifica se há usuários registrados -->
+                @if ($usuarios->isEmpty())
+                    <div class="row m-3">
+                        <!-- Mensagem caso não haja usuários -->
+                        <p>Nenhum usuário encontrado.</p>
+                    </div>
+                @else
+
                     <div class="table-responsive">
 
                         <!-- Tabela para exibir os usuários -->
-                        <table class="table table-hover datatable-table  table-striped">
+                        <table class="table table-hover datatable-table table-striped">
                             <thead>
                                 <tr>
                                     <!-- Cabeçalhos da tabela -->
@@ -109,9 +114,9 @@
                         {{ $usuarios->links() }}
 
                     </div>
-                </div>
             </div>
         </div>
+    </div>
     @endif
 
 @endsection

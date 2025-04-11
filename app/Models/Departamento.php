@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory; // Importa o trait HasFactory para suporte a factories
 use Illuminate\Database\Eloquent\Model; // Importa a classe base Model do Eloquent
+use Illuminate\Database\Eloquent\Builder;
 
 class Departamento extends Model
 {
@@ -54,5 +55,18 @@ class Departamento extends Model
     public function atividades()
     {
         return $this->hasMany(Atividade::class); // Define que um departamento pode ter várias atividades associadas
+    }
+
+
+     /**
+     * Escopo de consulta para buscar categorias por descrição.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  string  $nome
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePorNome($query, $nome)
+    {
+        return $query->whereRaw("REPLACE(LOWER(nome), ' ', '') LIKE ?", ["%{$nome}%"]);
     }
 }

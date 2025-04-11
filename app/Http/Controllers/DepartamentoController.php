@@ -12,10 +12,13 @@ class DepartamentoController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
-        // Recupera todos os departamentos do banco de dados
-        $departamentos = Departamento::all();
+        // Define o termo de busca
+        $searchTerm = $request->input('search', '');
+
+        // Carrega os departamentos com filtro e paginação
+        $departamentos = Departamento::porNome($searchTerm)->paginate(6);
 
         // Retorna a view 'index' com os dados dos departamentos
         return view('departamentos.index', compact('departamentos'));

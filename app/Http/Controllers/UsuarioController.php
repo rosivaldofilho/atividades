@@ -18,8 +18,13 @@ class UsuarioController extends Controller
         // Define o termo de busca
         $searchTerm = $request->input('search', '');
 
-        // Carrega os usuários com filtro e paginação
-        $usuarios = Usuario::porNome($searchTerm)->with('departamento')->paginate(6);
+        // Carrega as usuarios com filtro e paginação
+        $usuarios = Usuario::porNome($searchTerm)
+                               ->orWhereHas('departamento', function ($query) use ($searchTerm) {
+                                   $query->whereRaw("REPLACE(LOWER(nome), ' ', '') LIKE ?", ["%{$searchTerm}%"]);
+                               })
+                               ->with('departamento')
+                               ->paginate(6);
 
         // Passa o termo de busca para a view
         return view('usuarios.index', compact('usuarios', 'searchTerm'));

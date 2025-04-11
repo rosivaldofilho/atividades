@@ -17,22 +17,37 @@
 
 
 
-    <!-- Verifica se há categorias registradas -->
-    @if ($categorias->isEmpty())
-        <!-- Mensagem caso não haja categorias -->
-        <p>Nenhuma categoria cadastrada.</p>
-    @else
-        <div class="card table-card">
-            <div class="card-header d-flex align-items-center justify-content-between">
-                <!-- Botão para criar uma nova categoria -->
-                <a href="{{ route('categorias.create') }}" class="btn btn-primary mb-3">
-                    Criar Nova Categoria
-                </a>
-            </div>
-            <div class="card-body">
+
+    <div class="card table-card">
+        <div class="card-header d-flex align-items-center justify-content-between">
+            <!-- Botão para criar uma nova categoria -->
+            <a href="{{ route('categorias.create') }}" class="btn btn-primary mb-3">
+                Criar Nova Categoria
+            </a>
+
+            <!-- Formulário de Pesquisa -->
+            <form action="{{ route('categorias.index') }}" method="GET" class="mb-3">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Buscar usuário..."
+                        value="{{ request('search') }}">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="card-body">
+
+            <!-- Verifica se há categorias registradas -->
+            @if ($categorias->isEmpty())
+                <div class="row m-3">
+                    <!-- Mensagem caso não haja categorias -->
+                    <p>Nenhuma categoria cadastrada.</p>
+                </div>
+            @else
+
                 <div class="table-responsive">
                     <!-- Tabela para exibir as categorias -->
-                    <table class="table table-hover datatable-table">
+                    <table class="table table-hover datatable-table table-striped">
                         <thead>
                             <tr>
                                 <!-- Cabeçalhos da tabela -->
@@ -81,9 +96,13 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="text-end m-r-20"><a href="#!" class="b-b-primary text-primary">Colocar paginação aqui</a>
+                <div class="text-end m-3">
+
+                    <!-- Link para paginação -->
+                    {{ $categorias->links() }}
+
                 </div>
-            </div>
         </div>
+    </div>
     @endif
 @endsection
